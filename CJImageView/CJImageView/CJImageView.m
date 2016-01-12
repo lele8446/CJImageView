@@ -88,9 +88,6 @@
 - (void)setUri:(NSString *)uri defaultImage:(UIImage *)image showIndicator:(BOOL)showIndicator style:(UIActivityIndicatorViewStyle)style decoded:(BOOL)decoded
 {
     self.url = uri;
-    if ([uri rangeOfString:@".png"].location != NSNotFound) {
-        NSLog(@"uri = %@",uri);
-    }
     __weak typeof(self) wSelf = self;
     dispatch_async([self getImageOperatorQueue], ^(){
         UIImage * resultImage = [[CJImageViewCache sharedImageCache]getImageFromCache:uri decoded:decoded];
