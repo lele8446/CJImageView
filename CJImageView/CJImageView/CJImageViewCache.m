@@ -56,22 +56,22 @@ BOOL ImageDataHasPNGPreffix(NSData *data) {
 - (id)initWithNameSpace:(NSString *)ns
 {
     if ((self = [super init])) {
-        NSString *fullNamespace = ns;
+        NSString *fullNameSpace = ns;
         
-        // Init the memory cache
+        // 初始化内存缓存 NSCache
         _memCache = [[NSCache alloc] init];
-        _memCache.totalCostLimit = 1024*1024*10;//设置10兆的内存缓存作为二级缓存，先读内存，内存没有再读文件
-        _memCache.name = fullNamespace;
+        //设置10兆的内存缓存作为二级缓存，先读内存，内存没有再读文件
+        _memCache.totalCostLimit = 1024*1024*10;
+        _memCache.name = fullNameSpace;
         
         _ioQueue = dispatch_queue_create("CJ.CJImageViewCache", DISPATCH_QUEUE_SERIAL);
         
+        _fileManager = [NSFileManager defaultManager];
+        
         // Init the disk cache
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-        _diskCachePath = [paths[0] stringByAppendingPathComponent:fullNamespace];
+        _diskCachePath = [paths[0] stringByAppendingPathComponent:fullNameSpace];
         
-        dispatch_sync(_ioQueue, ^{
-            _fileManager = [NSFileManager defaultManager];
-        });
         
         // Subscribe to app events
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -164,7 +164,8 @@ BOOL ImageDataHasPNGPreffix(NSData *data) {
     if (data==nil ||uri==nil){
         return;
     }
-    if (data.length >1024*1024*1){//大于一兆的数据就不要放进内存缓存了,不然内存紧张会崩溃)
+    //大于一兆的数据就不要放进内存缓存了,不然内存紧张会崩溃)
+    if (data.length >1024*1024*1){
         return;
     }
     
@@ -172,14 +173,16 @@ BOOL ImageDataHasPNGPreffix(NSData *data) {
     if (data!=nil){
         @try {
             UIImage *image=[UIImage imageWithData:data];
+            UIImage *resultImage = nil;
             //png图片不执行decoded
             if (decoded && ![CJImageViewCache isPNGImage:data]) {
-                image = [CJImageViewCache decodedImageWithImage:image];
-            }if (nil == image) {
-                image=[UIImage imageWithData:data];
+                resultImage = [CJImageViewCache decodedImageWithImage:image];
             }
-            NSInteger dataSize= image.size.width * image.size.height * image.scale;
-            [_memCache setObject:image forKey:uri cost:dataSize];
+            if (nil == resultImage) {
+                resultImage = image;
+            }
+            NSInteger dataSize= resultImage.size.width * resultImage.size.height * resultImage.scale;
+            [_memCache setObject:resultImage forKey:uri cost:dataSize];
         }
         @catch (NSException *exception) {
             NSLog(@"exception=%@",exception);
@@ -192,25 +195,8 @@ BOOL ImageDataHasPNGPreffix(NSData *data) {
 {
     UIImage *image = [UIImage imageWithData:imageData];
     NSData *data = imageData;
-    // We need to determine if the image is a PNG or a JPEG
-    // PNGs are easier to detect because they have a unique signature (http://www.w3.org/TR/PNG-Structure.html)
-    // The first eight bytes of a PNG file always contain the following (decimal) values:
-    // 137 80 78 71 13 10 26 10
     
-    // We assume the image is PNG, in case the imageData is nil (i.e. if trying to save a UIImage directly),
-    // we will consider it PNG to avoid loosing the transparency
-    int alphaInfo = CGImageGetAlphaInfo(image.CGImage);
-    BOOL hasAlpha = !(alphaInfo == kCGImageAlphaNone ||
-                      alphaInfo == kCGImageAlphaNoneSkipFirst ||
-                      alphaInfo == kCGImageAlphaNoneSkipLast);
-    BOOL imageIsPng = hasAlpha;
-    
-    // But if we have an image data, we will look at the preffix
-    if ([imageData length] >= [kPNGSignatureData length]) {
-        imageIsPng = ImageDataHasPNGPreffix(imageData);
-    }
-    
-    if (imageIsPng) {
+    if ([CJImageViewCache isPNGImage:imageData]) {
         data = UIImagePNGRepresentation(image);
     }
     else {
@@ -226,7 +212,7 @@ BOOL ImageDataHasPNGPreffix(NSData *data) {
                 [_fileManager removeItemAtPath:[self cachePath:uri] error:nil];
             }
             [_fileManager createFileAtPath:[self cachePath:uri] contents:data attributes:nil];
-            //                NSLog(@"_diskCachePath = %@",_diskCachePath);
+//            NSLog(@"_diskCachePath = %@",_diskCachePath);
         }
     }
 }

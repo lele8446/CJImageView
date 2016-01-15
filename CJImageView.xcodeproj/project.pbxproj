@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		430AB79B1C357D6100668B5C /* CJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 430AB7981C357D6100668B5C /* CJImageView.m */; settings = {ASSET_TAGS = (); }; };
-		430AB8651C43B65500668B5C /* CJHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 430AB8621C43B65500668B5C /* CJHttpClient.m */; settings = {ASSET_TAGS = (); }; };
-		430AB8661C43B65500668B5C /* CJHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 430AB8641C43B65500668B5C /* CJHttpTool.m */; settings = {ASSET_TAGS = (); }; };
 		430AB8691C43CDEC00668B5C /* CJImageViewCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 430AB8681C43CDEC00668B5C /* CJImageViewCache.m */; settings = {ASSET_TAGS = (); }; };
+		431801D41C48F36D00D853CC /* CJHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 431801D11C48F36D00D853CC /* CJHttpClient.m */; settings = {ASSET_TAGS = (); }; };
+		431801D51C48F36D00D853CC /* CJHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 431801D31C48F36D00D853CC /* CJHttpTool.m */; settings = {ASSET_TAGS = (); }; };
 		435830AB1C33D42F0074D713 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 435830AA1C33D42F0074D713 /* main.m */; };
 		435830AE1C33D42F0074D713 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 435830AD1C33D42F0074D713 /* AppDelegate.m */; };
 		435830B11C33D42F0074D713 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435830B01C33D42F0074D713 /* ViewController.m */; };
@@ -41,12 +41,12 @@
 /* Begin PBXFileReference section */
 		430AB7971C357D6100668B5C /* CJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageView.h; sourceTree = "<group>"; };
 		430AB7981C357D6100668B5C /* CJImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageView.m; sourceTree = "<group>"; };
-		430AB8611C43B65500668B5C /* CJHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJHttpClient.h; sourceTree = "<group>"; };
-		430AB8621C43B65500668B5C /* CJHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJHttpClient.m; sourceTree = "<group>"; };
-		430AB8631C43B65500668B5C /* CJHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJHttpTool.h; sourceTree = "<group>"; };
-		430AB8641C43B65500668B5C /* CJHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJHttpTool.m; sourceTree = "<group>"; };
 		430AB8671C43CDEC00668B5C /* CJImageViewCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJImageViewCache.h; sourceTree = "<group>"; };
 		430AB8681C43CDEC00668B5C /* CJImageViewCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJImageViewCache.m; sourceTree = "<group>"; };
+		431801D01C48F36D00D853CC /* CJHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJHttpClient.h; sourceTree = "<group>"; };
+		431801D11C48F36D00D853CC /* CJHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJHttpClient.m; sourceTree = "<group>"; };
+		431801D21C48F36D00D853CC /* CJHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJHttpTool.h; sourceTree = "<group>"; };
+		431801D31C48F36D00D853CC /* CJHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJHttpTool.m; sourceTree = "<group>"; };
 		435830A61C33D42F0074D713 /* CJImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJImageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		435830AA1C33D42F0074D713 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		435830AC1C33D42F0074D713 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		430AB7921C357D6100668B5C /* CJImageView */ = {
 			isa = PBXGroup;
 			children = (
-				430AB8601C43B65500668B5C /* CJHttp */,
+				431801CF1C48F36D00D853CC /* CJHttp */,
 				430AB7971C357D6100668B5C /* CJImageView.h */,
 				430AB7981C357D6100668B5C /* CJImageView.m */,
 				430AB8671C43CDEC00668B5C /* CJImageViewCache.h */,
@@ -102,13 +102,13 @@
 			path = CJImageView;
 			sourceTree = "<group>";
 		};
-		430AB8601C43B65500668B5C /* CJHttp */ = {
+		431801CF1C48F36D00D853CC /* CJHttp */ = {
 			isa = PBXGroup;
 			children = (
-				430AB8611C43B65500668B5C /* CJHttpClient.h */,
-				430AB8621C43B65500668B5C /* CJHttpClient.m */,
-				430AB8631C43B65500668B5C /* CJHttpTool.h */,
-				430AB8641C43B65500668B5C /* CJHttpTool.m */,
+				431801D01C48F36D00D853CC /* CJHttpClient.h */,
+				431801D11C48F36D00D853CC /* CJHttpClient.m */,
+				431801D21C48F36D00D853CC /* CJHttpTool.h */,
+				431801D31C48F36D00D853CC /* CJHttpTool.m */,
 			);
 			path = CJHttp;
 			sourceTree = "<group>";
@@ -307,12 +307,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				430AB8691C43CDEC00668B5C /* CJImageViewCache.m in Sources */,
+				431801D41C48F36D00D853CC /* CJHttpClient.m in Sources */,
 				430AB79B1C357D6100668B5C /* CJImageView.m in Sources */,
-				430AB8661C43B65500668B5C /* CJHttpTool.m in Sources */,
 				435830B11C33D42F0074D713 /* ViewController.m in Sources */,
 				435830AE1C33D42F0074D713 /* AppDelegate.m in Sources */,
+				431801D51C48F36D00D853CC /* CJHttpTool.m in Sources */,
 				435830AB1C33D42F0074D713 /* main.m in Sources */,
-				430AB8651C43B65500668B5C /* CJHttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

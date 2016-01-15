@@ -24,8 +24,9 @@
 
 + (NSUInteger)getCacheCapacity
 {
+//    NSUInteger cacheCapacity = [NSURLCache sharedURLCache].currentMemoryUsage + [NSURLCache sharedURLCache].currentDiskUsage;
     NSUInteger cacheCapacity = [NSURLCache sharedURLCache].currentDiskUsage;
-    return cacheCapacity/(1024*1024)*1.0;
+    return cacheCapacity;
 }
 
 + (void)removeCachedResponseForRequest:(NSURLRequest *)request
@@ -59,7 +60,7 @@
         });
         return;
     }
-//    NSLog(@"get url:%@", request.URL);
+    NSLog(@"get url:%@", request.URL);
     
     if (cachPolicy != CJRequestIgnoringLocalCacheData) {
         NSCachedURLResponse* response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];

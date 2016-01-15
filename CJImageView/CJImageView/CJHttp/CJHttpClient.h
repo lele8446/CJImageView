@@ -31,7 +31,7 @@
 + (void)setMaxMemoryCapacity:(NSUInteger)memoryCapacity maxDiskCapacity:(NSUInteger)diskCapacity;
 
 /**
- *  获取缓存大小(单位M)
+ *  获取缓存大小
  *
  *  @return
  */

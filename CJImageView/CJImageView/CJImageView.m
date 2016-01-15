@@ -87,8 +87,7 @@
 
 - (void)setUri:(NSString *)uri defaultImage:(UIImage *)image showIndicator:(BOOL)showIndicator style:(UIActivityIndicatorViewStyle)style decoded:(BOOL)decoded
 {
-    self.url = uri;
-    __weak typeof(self) wSelf = self;
+    __weak __typeof(self) wSelf = self;
     dispatch_async([self getImageOperatorQueue], ^(){
         UIImage * resultImage = [[CJImageViewCache sharedImageCache]getImageFromCache:uri decoded:decoded];
         if (resultImage != nil) {
@@ -107,11 +106,12 @@
 {
     self.style = style;
     self.url = uri;
+    __weak typeof(self) wSelf = self;
     //先显示默认图片
     dispatch_async_main_queue(^{
-        self.image = image;
+        wSelf.image = image;
     });
-    __weak typeof(self) wSelf = self;
+    
     if (showIndicator) {
         if (!_loadingInducator) {
             UIActivityIndicatorView *tempIndicator =  [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:self.style];
@@ -126,13 +126,14 @@
         self.loadingInducator.activityIndicatorViewStyle = self.style;
         self.loadingInducator.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
         dispatch_async_main_queue(^{
-            [self addSubview:self.loadingInducator];
-            [self bringSubviewToFront:self.loadingInducator];
-            [self.loadingInducator startAnimating];
+            [wSelf addSubview:wSelf.loadingInducator];
+            [wSelf bringSubviewToFront:wSelf.loadingInducator];
+            [wSelf.loadingInducator startAnimating];
         });
     }
     
     [CJHttpClient getUrl:uri parameters:nil timeoutInterval:HTTP_DEFAULT_TIMEOUT cachPolicy:CJRequestIgnoringLocalCacheData completionHandler:^(NSData *data, NSURLResponse *response){
+        __strong __typeof(wSelf)strongSelf = wSelf;
         //保存缓存
         [[CJImageViewCache sharedImageCache] saveCache:data uri:uri decoded:decoded];
         dispatch_async([self getImageOperatorQueue], ^(){
@@ -143,17 +144,18 @@
                     resultImage = [CJImageViewCache decodedImageWithImage:dataImage];
                 }
                 dispatch_async_main_queue(^{
-                    wSelf.image = resultImage != nil?resultImage:(dataImage != nil?dataImage:image);
-                    [wSelf.loadingInducator stopAnimating];
-                    [wSelf sendSubviewToBack:wSelf.loadingInducator];
+                    strongSelf.image = resultImage != nil?resultImage:(dataImage != nil?dataImage:image);
+                    [strongSelf.loadingInducator stopAnimating];
+                    [strongSelf sendSubviewToBack:strongSelf.loadingInducator];
                 });
             }
         });
     }errorHandler:^(NSError *error){
+        __strong __typeof(wSelf)strongSelf = wSelf;
         dispatch_async_main_queue(^{
-            wSelf.image = image;
-            [wSelf.loadingInducator stopAnimating];
-            [wSelf sendSubviewToBack:wSelf.loadingInducator];
+            strongSelf.image = image;
+            [strongSelf.loadingInducator stopAnimating];
+            [strongSelf sendSubviewToBack:strongSelf.loadingInducator];
         });
     }];
 }

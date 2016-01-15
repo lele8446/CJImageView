@@ -44,7 +44,7 @@
 - (void)setUri:(NSString *)uri showIndicator:(BOOL)showIndicator;
 
 /**
- *  加载图片，设置默认图，是否显示加载菊花
+ *  加载图片，设置默认图，是否显示加载菊花，图片是否decoded
  *
  *  @param uri
  *  @param image
@@ -54,7 +54,7 @@
 - (void)setUri:(NSString *)uri defaultImage:(UIImage *)image showIndicator:(BOOL)showIndicator decoded:(BOOL)decoded;
 
 /**
- *  加载图片，设置默认图，显示加载菊花，设置加载菊花样式
+ *  加载图片，设置默认图，显示加载菊花，设置加载菊花样式，图片是否decoded
  *
  *  @param uri
  *  @param image
