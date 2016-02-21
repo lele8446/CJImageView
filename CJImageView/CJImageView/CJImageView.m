@@ -164,7 +164,8 @@
     static dispatch_queue_t  _imageOperatorQueue;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-        _imageOperatorQueue = dispatch_queue_create([@"CJ.imageOperatorQueue" UTF8String], NULL);
+        //第二个参数 传入 DISPATCH_QUEUE_SERIAL 或 NULL 表示创建串行队列。传入 DISPATCH_QUEUE_CONCURRENT 表示创建并行队列
+        _imageOperatorQueue = dispatch_queue_create([@"CJ.imageOperatorQueue" UTF8String], DISPATCH_QUEUE_CONCURRENT);
     });
     return _imageOperatorQueue;
 }

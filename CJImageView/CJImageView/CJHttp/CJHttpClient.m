@@ -60,7 +60,7 @@
         });
         return;
     }
-    NSLog(@"get url:%@", request.URL);
+//    NSLog(@"get url:%@", request.URL);
     
     if (cachPolicy != CJRequestIgnoringLocalCacheData) {
         NSCachedURLResponse* response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
@@ -73,7 +73,11 @@
         [CJHttpClient removeCachedResponseForRequest:request];
     }
     
-    NSURLSession *session = [NSURLSession sharedSession];
+    //限制连接到主机的数量
+    [NSURLSessionConfiguration defaultSessionConfiguration].HTTPMaximumConnectionsPerHost = 4;
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+//    NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionTask *task = [session dataTaskWithRequest:request
                                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                             if ((error == nil || [error isEqual:[NSNull null]])&& data != nil) {
@@ -84,6 +88,7 @@
                                                     //忽略缓存，删除缓存
                                                     [CJHttpClient removeCachedResponseForRequest:request];
                                                 }
+                                                NSLog(@"get url:%@", request.URL);
                                             }else{
                                                 dispatch_async_main_queue(^{
                                                     errorHandler(error);
