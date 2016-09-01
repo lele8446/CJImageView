@@ -48,6 +48,22 @@ BOOL ImageDataHasPNGPreffix(NSData *data) {
     return instance;
 }
 
+/*
+ * alloc方法初始化实例时，默认会调用allocWithZone方法。
+ * 在此将allocWithZone:重写，是为了防止用户直接使用allocWithZone创建实例，使得项目中不是存在唯一的实例，违背了单例的原则
+ */
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    static CJImageViewCache *instance;
+    dispatch_once(&onceToken, ^{
+        instance = [super allocWithZone:zone];
+        kPNGSignatureData = [NSData dataWithBytes:kPNGSignatureBytes length:8];
+    });
+    return instance;
+}
+
+
 - (id)init
 {
     return [self initWithNameSpace:@"CJImageViewCache"];
