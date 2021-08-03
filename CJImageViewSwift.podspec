@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.name         = "CJImageViewSwift"
   s.module_name  = "CJImageView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.3"
   s.summary      = "A custom UIImageView that supports contentMode attribute expansion."
   s.homepage     = "https://github.com/lele8446/CJImageView"
   # s.license      = "MIT"
