@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bDG-gH-6aB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="B3f-i5-dOR">
+            <objects>
+                <navigationController id="bDG-gH-6aB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tYv-2B-7Qe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ds5-DE-tUw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0c-98-7By" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1719" y="11"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nnX-eb-mUL" customClass="CJImageView">
+                                <rect key="frame" x="50" y="200" width="314" height="269.5"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nnX-eb-mUL" secondAttribute="height" multiplier="261:224" id="6Om-XR-Uh2"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-KN-bMF">
+                                <rect key="frame" x="272.5" y="549.5" width="91.5" height="50"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5AY-aX-PVt"/>
+                                </constraints>
+                                <state key="normal" title="启动图"/>
+                                <connections>
+                                    <action selector="selectLaunchImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbZ-Hp-6nD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="590-sy-ckm">
+                                <rect key="frame" x="50" y="549.5" width="91.5" height="50"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Ih-gQ-8o1"/>
+                                </constraints>
+                                <state key="normal" title="小图"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lTj-xM-faO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXR-9s-1uc">
+                                <rect key="frame" x="161.5" y="549.5" width="91" height="50"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="maG-nX-xIJ"/>
+                                </constraints>
+                                <state key="normal" title="下载"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bqp-Q5-fSa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-sK-IGx">
+                                <rect key="frame" x="50" y="625.5" width="142" height="50"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fKM-mL-tSG"/>
+                                </constraints>
+                                <state key="normal" title="ContentMode"/>
+                                <connections>
+                                    <action selector="changeContentMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Any-25-f7Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khc-Ji-o0c">
+                                <rect key="frame" x="222" y="625.5" width="142" height="50"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VoD-pS-Tli"/>
+                                </constraints>
+                                <state key="normal" title="CJContentMode"/>
+                                <connections>
+                                    <action selector="changeCJContentMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Phs-dm-pch"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aXR-9s-1uc" firstAttribute="top" secondItem="nnX-eb-mUL" secondAttribute="bottom" constant="80" id="464-jG-obV"/>
+                            <constraint firstItem="khc-Ji-o0c" firstAttribute="width" secondItem="qF3-sK-IGx" secondAttribute="width" id="5wb-L0-Z6c"/>
+                            <constraint firstItem="khc-Ji-o0c" firstAttribute="leading" secondItem="qF3-sK-IGx" secondAttribute="trailing" constant="30" id="7Lg-gt-2UG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="khc-Ji-o0c" secondAttribute="trailing" constant="50" id="DJL-LK-NEQ"/>
+                            <constraint firstItem="1Zd-KN-bMF" firstAttribute="top" secondItem="590-sy-ckm" secondAttribute="top" id="Ex5-CN-Oew"/>
+                            <constraint firstItem="khc-Ji-o0c" firstAttribute="top" secondItem="qF3-sK-IGx" secondAttribute="top" id="GQ6-vT-gtw"/>
+                            <constraint firstItem="qF3-sK-IGx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="IIN-bE-ue0"/>
+                            <constraint firstItem="aXR-9s-1uc" firstAttribute="leading" secondItem="590-sy-ckm" secondAttribute="trailing" constant="20" id="PAi-IE-5pd"/>
+                            <constraint firstItem="aXR-9s-1uc" firstAttribute="top" secondItem="590-sy-ckm" secondAttribute="top" id="QcJ-qZ-weH"/>
+                            <constraint firstItem="aXR-9s-1uc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qh9-fo-gEi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nnX-eb-mUL" secondAttribute="trailing" constant="50" id="RU9-Sy-XTH"/>
+                            <constraint firstItem="nnX-eb-mUL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="XrK-jM-2li"/>
+                            <constraint firstItem="590-sy-ckm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="YWA-dA-CjF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Zd-KN-bMF" secondAttribute="trailing" constant="50" id="gd1-zC-kaP"/>
+                            <constraint firstItem="qF3-sK-IGx" firstAttribute="top" secondItem="590-sy-ckm" secondAttribute="bottom" constant="26" id="hmn-ro-tlz"/>
+                            <constraint firstItem="1Zd-KN-bMF" firstAttribute="width" secondItem="590-sy-ckm" secondAttribute="width" id="nEx-mo-1vk"/>
+                            <constraint firstItem="nnX-eb-mUL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ruD-23-PC3"/>
+                            <constraint firstItem="1Zd-KN-bMF" firstAttribute="leading" secondItem="aXR-9s-1uc" secondAttribute="trailing" constant="20" id="yW0-OF-FkZ"/>
+                            <constraint firstItem="aXR-9s-1uc" firstAttribute="width" secondItem="590-sy-ckm" secondAttribute="width" id="zFz-wN-RUb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="Kir-kV-VvJ"/>
+                    <connections>
+                        <outlet property="imageView" destination="nnX-eb-mUL" id="em5-Y4-ug0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-723" y="11"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

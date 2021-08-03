@@ -2,66 +2,32 @@
 //  CJImageView.h
 //  CJImageView
 //
-//  Created by C.K.Lian on 15/12/30.
-//  Copyright © 2015年 C.K.Lian. All rights reserved.
+//  Created by C.J.Lian on 2021/7/2.
+//  Copyright © 2021 cjl. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CJImageViewContentMode) {
+    CJContentModeScaleAspectCenter        = 1003,
+    CJContentModeScaleAspectTop           = 1004,
+    CJContentModeScaleAspectBottom        = 1005,
+    CJContentModeScaleAspectLeft          = 1006,
+    CJContentModeScaleAspectRight         = 1007,
+    CJContentModeScaleAspectTopLeft       = 1008,
+    CJContentModeScaleAspectTopRight      = 1009,
+    CJContentModeScaleAspectBottomLeft    = 1010,
+    CJContentModeScaleAspectBottomRight   = 1011,
+};
+
+IB_DESIGNABLE
+/// A custom UIImageView that supports contentMode attribute expansion
 @interface CJImageView : UIImageView
 
-/**
- *  是否显示加载菊花，默认否
- */
-@property (nonatomic) BOOL showIndicator;
-/**
- *  加载菊花样式，默认UIActivityIndicatorViewStyleGray
- */
-@property (nonatomic) UIActivityIndicatorViewStyle style;
+/// UIView contentMode attribute expansion. If image' size larger than CJImageView' size, contents scaled to fill with fixed aspect and adjust position, some portion of content may be clipped. Otherwise just adjust the position.
+@property (nonatomic, assign) CJImageViewContentMode cjContentMode;
 
-
-/**
- *  加载图片uri
- *
- *  @param uri
- */
-- (void)setUri:(NSString *)uri;
-
-/**
- *  加载图片，设置默认图
- *
- *  @param uri
- *  @param image
- */
-- (void)setUri:(NSString *)uri defaultImage:(UIImage *)image;
-
-/**
- *  加载图片，是否显示加载菊花
- *
- *  @param uri
- *  @param showIndicator
- */
-- (void)setUri:(NSString *)uri showIndicator:(BOOL)showIndicator;
-
-/**
- *  加载图片，设置默认图，是否显示加载菊花，图片是否decoded
- *
- *  @param uri
- *  @param image
- *  @param showIndicator
- *  @param decoded
- */
-- (void)setUri:(NSString *)uri defaultImage:(UIImage *)image showIndicator:(BOOL)showIndicator decoded:(BOOL)decoded;
-
-/**
- *  加载图片，设置默认图，显示加载菊花，设置加载菊花样式，图片是否decoded
- *
- *  @param uri
- *  @param image
- *  @param showIndicator
- *  @param style 默认UIActivityIndicatorViewStyleGray
- *  @param decoded 是否decoded
- */
-- (void)setUri:(NSString *)uri defaultImage:(UIImage *)image showIndicator:(BOOL)showIndicator style:(UIActivityIndicatorViewStyle)style decoded:(BOOL)decoded;
-
+/// self.image or [self image] always return nil. Use [self cjImage] instead.
+@property (nonatomic, strong, setter=setImage:, getter=image) UIImage *image;
+- (UIImage *)cjImage;
 @end
