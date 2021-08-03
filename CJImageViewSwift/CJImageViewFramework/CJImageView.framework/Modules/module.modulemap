@@ -1,0 +1,11 @@
+framework module CJImageView {
+  umbrella header "CJImageView.h"
+
+  export *
+  module * { export * }
+}
+
+module CJImageView.Swift {
+    header "CJImageView-Swift.h"
+    requires objc
+}

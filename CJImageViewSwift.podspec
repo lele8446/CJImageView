@@ -31,6 +31,9 @@ Pod::Spec.new do |s|
   s.author       = { "ChiJinLian" => "lele8446@foxmail.com" }
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/lele8446/CJImageView.git", :tag => "#{s.version}" }
-  s.source_files  = "CJImageViewSwift/CJImageView/*"
+  s.source_files  = "CJImageViewSwift/CJImageViewFramework/*"
+  s.public_header_files  = "CJImageViewSwift/CJImageViewFramework/**/*.h"
+  s.requires_arc = true
+  s.ios.vendored_frameworks = "CJImageViewSwift/CJImageViewFramework/CJImageView.framework"
   s.swift_version = '4'
 end
