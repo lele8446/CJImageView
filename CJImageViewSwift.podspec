@@ -32,5 +32,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/lele8446/CJImageView.git", :tag => "#{s.version}" }
   s.source_files  = "CJImageViewSwift/CJImageView/*"
-  spec.swift_version = '4'
+  s.swift_version = '4'
 end
