@@ -50,6 +50,7 @@
 		43D6B45E26B6AEAA00DDA543 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		43D6B46226B6AEC000DDA543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		43D6B46426B6AEC000DDA543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		43D6B49026B9464400DDA543 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E725BF8626B786E9001E5707 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73C596E26B7FA9900E2B767 /* CJImageViewSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CJImageViewSwift.podspec; path = ../CJImageViewSwift.podspec; sourceTree = "<group>"; };
 		E73C5A1726B9259C00E2B767 /* CJImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CJImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +80,7 @@
 		E73C5A1826B9259C00E2B767 /* CJImageView */ = {
 			isa = PBXGroup;
 			children = (
+				43D6B49026B9464400DDA543 /* Info.plist */,
 				E73C5A1926B9259C00E2B767 /* CJImageView.h */,
 				43D6B42A26B6A75700DDA543 /* CJImageView.swift */,
 			);
