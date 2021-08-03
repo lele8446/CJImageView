@@ -54,7 +54,6 @@
 		E73C596E26B7FA9900E2B767 /* CJImageViewSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CJImageViewSwift.podspec; path = ../CJImageViewSwift.podspec; sourceTree = "<group>"; };
 		E73C5A1726B9259C00E2B767 /* CJImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CJImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73C5A1926B9259C00E2B767 /* CJImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJImageView.h; sourceTree = "<group>"; };
-		E73C5A1A26B9259C00E2B767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E779504E26A523C10076278F /* CJImageViewSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJImageViewSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,7 +81,6 @@
 			children = (
 				E73C5A1926B9259C00E2B767 /* CJImageView.h */,
 				43D6B42A26B6A75700DDA543 /* CJImageView.swift */,
-				E73C5A1A26B9259C00E2B767 /* Info.plist */,
 			);
 			path = CJImageView;
 			sourceTree = "<group>";
