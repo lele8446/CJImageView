@@ -5,11 +5,13 @@ If image' size larger than CJImageView' size,  contents scaled to fill with fixe
 
 ![CJImageView](https://lele8446infoq.oss-cn-shenzhen.aliyuncs.com/CJImageView/CJImageView01.jpg)
 
+Note that **self.image** or **[self image]** always return nil. Use **[self cjImage]、self.cjImage()** instead.
+
 ### Installation
 
 To integrate CJImageView into your Xcode project using CocoaPods, specify it in your Podfile:
 
-```shell
+```sh
 // Objective-C
 pod 'CJImageView', '1.0.0'
 
@@ -23,7 +25,7 @@ pod 'CJImageViewSwift', '1.0.0'
 
 * Objective-C
 
-* ```objective-c
+  ```objective-c
   #import <CJImageView.h>
   
   self.imageView.image = [UIImage imageNamed:@"xxx"];
