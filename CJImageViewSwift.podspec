@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.name         = "CJImageViewSwift"
   s.module_name  = "CJImageView"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "A custom UIImageView that supports contentMode attribute expansion."
   s.homepage     = "https://github.com/lele8446/CJImageView"
   # s.license      = "MIT"
@@ -31,9 +31,9 @@ Pod::Spec.new do |s|
   s.author       = { "ChiJinLian" => "lele8446@foxmail.com" }
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/lele8446/CJImageView.git", :tag => "#{s.version}" }
-  s.source_files  = "CJImageViewSwift/CJImageViewFramework/*"
-  s.public_header_files  = "CJImageViewSwift/CJImageViewFramework/**/*.h"
+  s.source_files  = "CJImageViewSwift/CJImageView/**/*"
+  # s.public_header_files  = "CJImageViewSwift/CJImageView/**/*.h"
   s.requires_arc = true
-  s.ios.vendored_frameworks = "CJImageViewSwift/CJImageViewFramework/CJImageView.framework"
+  # s.ios.vendored_frameworks = "CJImageViewSwift/CJImageViewFramework/CJImageView.framework"
   s.swift_version = '4'
 end

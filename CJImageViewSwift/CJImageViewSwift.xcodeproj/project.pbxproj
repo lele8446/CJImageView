@@ -12,22 +12,9 @@
 		43D6B46026B6AEAA00DDA543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6B45E26B6AEAA00DDA543 /* AppDelegate.swift */; };
 		43D6B46526B6AEC000DDA543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D6B46126B6AEC000DDA543 /* Main.storyboard */; };
 		43D6B46626B6AEC000DDA543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D6B46326B6AEC000DDA543 /* LaunchScreen.storyboard */; };
+		43D6B49226BA7E7300DDA543 /* CJImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6B42A26B6A75700DDA543 /* CJImageView.swift */; };
 		E73C596F26B7FA9900E2B767 /* CJImageViewSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E73C596E26B7FA9900E2B767 /* CJImageViewSwift.podspec */; };
-		E73C5A1B26B9259C00E2B767 /* CJImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = E73C5A1926B9259C00E2B767 /* CJImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E73C5A1E26B9259C00E2B767 /* CJImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73C5A1726B9259C00E2B767 /* CJImageView.framework */; };
-		E73C5A1F26B9259C00E2B767 /* CJImageView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E73C5A1726B9259C00E2B767 /* CJImageView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E73C5A2526B925F300E2B767 /* CJImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6B42A26B6A75700DDA543 /* CJImageView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E73C5A1C26B9259C00E2B767 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E779504626A523C10076278F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E73C5A1626B9259C00E2B767;
-			remoteInfo = CJImageView;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E73C5A2326B9259C00E2B767 /* Embed Frameworks */ = {
@@ -36,7 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E73C5A1F26B9259C00E2B767 /* CJImageView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,27 +36,16 @@
 		43D6B45E26B6AEAA00DDA543 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Example/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		43D6B46226B6AEC000DDA543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		43D6B46426B6AEC000DDA543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		43D6B49026B9464400DDA543 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E725BF8626B786E9001E5707 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73C596E26B7FA9900E2B767 /* CJImageViewSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CJImageViewSwift.podspec; path = ../CJImageViewSwift.podspec; sourceTree = "<group>"; };
-		E73C5A1726B9259C00E2B767 /* CJImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CJImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E73C5A1926B9259C00E2B767 /* CJImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJImageView.h; sourceTree = "<group>"; };
 		E779504E26A523C10076278F /* CJImageViewSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJImageViewSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E73C5A1426B9259C00E2B767 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E779504B26A523C10076278F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73C5A1E26B9259C00E2B767 /* CJImageView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +55,6 @@
 		E73C5A1826B9259C00E2B767 /* CJImageView */ = {
 			isa = PBXGroup;
 			children = (
-				43D6B49026B9464400DDA543 /* Info.plist */,
-				E73C5A1926B9259C00E2B767 /* CJImageView.h */,
 				43D6B42A26B6A75700DDA543 /* CJImageView.swift */,
 			);
 			path = CJImageView;
@@ -101,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				E779504E26A523C10076278F /* CJImageViewSwift.app */,
-				E73C5A1726B9259C00E2B767 /* CJImageView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,36 +93,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		E73C5A1226B9259C00E2B767 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E73C5A1B26B9259C00E2B767 /* CJImageView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		E73C5A1626B9259C00E2B767 /* CJImageView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E73C5A2026B9259C00E2B767 /* Build configuration list for PBXNativeTarget "CJImageView" */;
-			buildPhases = (
-				E73C5A1226B9259C00E2B767 /* Headers */,
-				E73C5A1326B9259C00E2B767 /* Sources */,
-				E73C5A1426B9259C00E2B767 /* Frameworks */,
-				E73C5A1526B9259C00E2B767 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CJImageView;
-			productName = CJImageView;
-			productReference = E73C5A1726B9259C00E2B767 /* CJImageView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		E779504D26A523C10076278F /* CJImageViewSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E779506226A523C40076278F /* Build configuration list for PBXNativeTarget "CJImageViewSwift" */;
@@ -163,7 +106,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E73C5A1D26B9259C00E2B767 /* PBXTargetDependency */,
 			);
 			name = CJImageViewSwift;
 			productName = SmartImageViewSwift;
@@ -179,10 +121,6 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					E73C5A1626B9259C00E2B767 = {
-						CreatedOnToolsVersion = 12.4;
-						LastSwiftMigration = 1240;
-					};
 					E779504D26A523C10076278F = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
@@ -203,19 +141,11 @@
 			projectRoot = "";
 			targets = (
 				E779504D26A523C10076278F /* CJImageViewSwift */,
-				E73C5A1626B9259C00E2B767 /* CJImageView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E73C5A1526B9259C00E2B767 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E779504C26A523C10076278F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,32 +160,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E73C5A1326B9259C00E2B767 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E73C5A2526B925F300E2B767 /* CJImageView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E779504A26A523C10076278F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D6B49226BA7E7300DDA543 /* CJImageView.swift in Sources */,
 				43D6B46026B6AEAA00DDA543 /* AppDelegate.swift in Sources */,
 				43D6B45F26B6AEAA00DDA543 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E73C5A1D26B9259C00E2B767 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E73C5A1626B9259C00E2B767 /* CJImageView */;
-			targetProxy = E73C5A1C26B9259C00E2B767 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43D6B46126B6AEC000DDA543 /* Main.storyboard */ = {
@@ -277,65 +192,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E73C5A2126B9259C00E2B767 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2F892287LA;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CJImageView/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = Smart.CJImageView;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E73C5A2226B9259C00E2B767 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 2F892287LA;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CJImageView/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Smart.CJImageView;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		E779506026A523C40076278F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -495,15 +351,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E73C5A2026B9259C00E2B767 /* Build configuration list for PBXNativeTarget "CJImageView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E73C5A2126B9259C00E2B767 /* Debug */,
-				E73C5A2226B9259C00E2B767 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E779504926A523C10076278F /* Build configuration list for PBXProject "CJImageViewSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

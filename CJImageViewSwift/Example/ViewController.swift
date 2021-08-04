@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CJImageView
+//import CJImageView
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: CJImageView!
