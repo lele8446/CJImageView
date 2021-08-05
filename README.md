@@ -16,7 +16,7 @@ To integrate CJImageView into your Xcode project using CocoaPods, specify it in 
 pod 'CJImageView', '1.0.0'
 
 // Swift
-pod 'CJImageViewSwift', '1.0.0'
+pod 'CJImageViewSwift', '1.0.4'
 ```
 
 
