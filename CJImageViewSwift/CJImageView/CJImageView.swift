@@ -142,7 +142,7 @@ private class CJImageContentView: UIView {
 
 /// A custom UIImageView that supports contentMode attribute expansion.
 /// Note that self.image always return nil. Use self.cjImage() instead.
-public class CJImageView: UIImageView {
+open class CJImageView: UIImageView {
     
     private var _cjContentMode: CJContentMode! = CJContentMode.scaleAspectUnknown
     
@@ -202,7 +202,7 @@ public class CJImageView: UIImageView {
         return self.originalImage
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         if !self.bounds.equalTo(self.oldBounds) {
             self.oldBounds = self.bounds
